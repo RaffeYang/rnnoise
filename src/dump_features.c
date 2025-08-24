@@ -148,7 +148,7 @@ static unsigned rand_lcg(unsigned *seed) {
   return *seed;
 }
 
-static float uni_rand() {
+static float uni_rand(void) {
   return rand()/(double)RAND_MAX-.5;
 }
 

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(clang:*)",
+      "Bash(make:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

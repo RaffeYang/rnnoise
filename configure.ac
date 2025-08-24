@@ -49,6 +49,14 @@ AC_SUBST(OP_LT_AGE)
 CC_CHECK_CFLAGS_APPEND(
   [-pedantic -Wall -Wextra -Wno-sign-compare -Wno-parentheses -Wno-long-long])
 
+# Enable native CPU optimization by default
+CC_CHECK_CFLAGS_APPEND([-march=native])
+
+# Set CFLAGS to include our optimizations if not set by user
+if test "x$ac_cv_env_CFLAGS_set" != "xset"; then
+  CFLAGS="$AM_CFLAGS"
+fi
+
 # Platform-specific tweaks
 case $host in
   *-mingw*)

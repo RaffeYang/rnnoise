@@ -64,11 +64,11 @@ examples_rnnoise_demo_LDADD = librnnoise.la
 
 dump_features_SOURCES = src/dump_features.c src/denoise.c src/pitch.c src/celt_lpc.c src/kiss_fft.c src/parse_lpcnet_weights.c src/rnnoise_tables.c
 dump_features_LDADD = $(LIBM)
-dump_features_CFLAGS = $(AM_CFLAGS) -DTRAINING
+dump_features_CPPFLAGS = -DTRAINING
 
 dump_weights_blob_SOURCES = src/write_weights.c
 dump_weights_blob_LDADD = $(LIBM)
-dump_weights_blob_CFLAGS = $(AM_CFLAGS) -DDUMP_BINARY_WEIGHTS
+dump_weights_blob_CPPFLAGS = -DDUMP_BINARY_WEIGHTS
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = rnnoise.pc

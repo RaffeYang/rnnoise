@@ -157,8 +157,8 @@ void compute_conv2d_c(const Conv2dLayer *conv, float *out, float *mem, const flo
 #endif
 
 #if defined(__x86_64__) && !defined(RNN_ENABLE_X86_RTCD) && !defined(__AVX2__)
-#if defined(_MSC_VER)
-#pragma message ("Only SSE and SSE2 are available. On newer machines, enable SSSE3/AVX/AVX2 to get better performance")
+#if defined(_MSC_VER) || defined(__clang__)
+#pragma message ("Only SSE and SSE2 are available. On newer machines, enable SSSE3/AVX/AVX2 using -march= to get better performance")
 #else
 #warning "Only SSE and SSE2 are available. On newer machines, enable SSSE3/AVX/AVX2 using -march= to get better performance"
 #endif
